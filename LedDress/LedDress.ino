@@ -1,5 +1,5 @@
 #include <Adafruit_CircuitPlayground.h>
-#include <FastLED.h>
+#include <FastLED.h>  // version 3.1.0
 #include <Wire.h>
 #include <SPI.h>
 #include <math.h>
@@ -347,7 +347,7 @@ void fadeLeftRight() {
   fillLedsFromPalette(ltLEDS, NUM_LEDS, 255, fadeIndex);
   fillLedsFromPalette(rtLEDS, NUM_LEDS, 255, fadeIndex + 128);
   CRGB col1 = ColorFromPalette(currentPalette, fadeIndex, 16, currentBlending);
-  CRGB col2 = ColorFromPalette(currentPalett2e, fadeIndex + 128, 16, currentBlending);
+  CRGB col2 = ColorFromPalette(currentPalette, fadeIndex + 128, 16, currentBlending);
   fill_solid(cpLEDS, NUM_CP_LEDS/2, col1); 
   fill_solid(&cpLEDS[NUM_CP_LEDS/2], NUM_CP_LEDS/2, col2);
   fadeIndex++;
